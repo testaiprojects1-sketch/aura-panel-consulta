@@ -17,10 +17,10 @@ function ElevenLabsConvai(props: ElevenLabsConvaiProps) {
   return <elevenlabs-convai {...props} />;
 }
 
-/** Agent de demo AURA — override con NEXT_PUBLIC_ELEVENLABS_AGENT_ID si hace falta. */
+/** Agent AURA — override con NEXT_PUBLIC_ELEVENLABS_AGENT_ID si hace falta. */
 const AGENT_ID =
   process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID?.trim() ||
-  "agent_9601ky60er25e1hvws6z80q4n24s";
+  "agent_1001ky62xg8wfpmrg3n2zmyy2p9v";
 
 /** ElevenLabs Conversational AI embed (ConvAI widget). */
 export default function ElevenLabsWidget({ className = "" }: ElevenLabsWidgetProps) {
