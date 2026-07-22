@@ -13,7 +13,7 @@ Panel interno demo para la consulta de la **Dra. Macarena Fontecilla**.
 
 ## Módulos
 
-1. **Centro de Mando** — KPIs, agenda (diaria/semanal/mensual), aprobaciones, ElevenLabs (placeholder), gráficos, inactivos
+1. **Centro de Mando** — KPIs, agenda (diaria/semanal/mensual), aprobaciones, ElevenLabs ConvAI, gráficos, inactivos
 2. **Acciones & Tareas** — tableros diaria / semanal / mensual
 3. **Pacientes & Predicción** — lealtad, riesgo, leads
 4. **KPIs & Simulador** — benchmarks + simulador de impacto
