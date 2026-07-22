@@ -107,16 +107,14 @@ export default function DashboardShell() {
           {nav === "centro" && (
             <>
               <KpiRow />
-              <div className="grid grid-cols-[1.15fr_0.85fr] gap-4">
-                <AgendaHoy />
-                <div className="space-y-4">
-                  <AprobacionesPendientes
-                    items={approvals}
-                    onAprobar={handleAprobar}
-                    onAhoraNo={handleAhoraNo}
-                  />
-                  <ElevenLabsWidget />
-                </div>
+              <AgendaHoy />
+              <div className="grid grid-cols-[1.1fr_0.9fr] gap-4">
+                <AprobacionesPendientes
+                  items={approvals}
+                  onAprobar={handleAprobar}
+                  onAhoraNo={handleAhoraNo}
+                />
+                <ElevenLabsWidget />
               </div>
               <ChartsRow />
               <PacientesInactivos

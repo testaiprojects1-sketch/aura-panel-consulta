@@ -39,6 +39,23 @@ export interface Cita {
   estado: CitaEstado;
 }
 
+export interface AniversarioDetalle {
+  tipo: "Primera visita" | "Cumpleaños" | "Inicio de plan" | "Último control";
+  fecha: string;
+  detalle: string;
+}
+
+/** Ficha clínica liviana al hacer clic en un nombre de la agenda. */
+export interface PacienteAgendaDetalle {
+  pacienteId: string;
+  tratamientoAnterior: string;
+  fechaTratamientoAnterior: string;
+  vienePor: string;
+  podriaBeneficiarse: string[];
+  aniversario: AniversarioDetalle;
+  notas: string;
+}
+
 export interface Presupuesto {
   id: string;
   numero: number;

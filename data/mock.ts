@@ -36,6 +36,11 @@ export {
   heatCells,
 } from "./extended";
 
+export {
+  pacienteAgendaDetalles,
+  getPacienteAgendaDetalle,
+} from "./agendaDetails";
+
 export const pacientes: Paciente[] = [
   {
     id: "p01",
