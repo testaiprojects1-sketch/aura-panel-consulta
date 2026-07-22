@@ -1,11 +1,28 @@
 "use client";
 
+import Script from "next/script";
+import type { HTMLAttributes } from "react";
+
 interface ElevenLabsWidgetProps {
   className?: string;
 }
 
-/** Placeholder — se conectará ElevenLabs Conversational AI después. */
+type ElevenLabsConvaiProps = HTMLAttributes<HTMLElement> & {
+  "agent-id"?: string;
+  variant?: string;
+  dismissible?: string;
+};
+
+function ElevenLabsConvai(props: ElevenLabsConvaiProps) {
+  return <elevenlabs-convai {...props} />;
+}
+
+const AGENT_ID = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID?.trim() ?? "";
+
+/** ElevenLabs Conversational AI — set NEXT_PUBLIC_ELEVENLABS_AGENT_ID to connect. */
 export default function ElevenLabsWidget({ className = "" }: ElevenLabsWidgetProps) {
+  const connected = AGENT_ID.length > 0;
+
   return (
     <section
       className={`rounded-lg border border-line bg-white p-4 shadow-card ${className}`}
@@ -20,29 +37,61 @@ export default function ElevenLabsWidget({ className = "" }: ElevenLabsWidgetPro
             Widget ElevenLabs
           </h2>
           <p className="mt-1.5 max-w-sm text-[12px] leading-relaxed text-muted">
-            Próximamente: conversación por voz con AURA para consultar agenda,
-            aprobar acciones y dictar seguimientos. El widget se conectará aquí.
+            {connected
+              ? "Hable con AURA por voz: agenda, aprobaciones y seguimientos."
+              : "Próximamente: conversación por voz con AURA. Configure NEXT_PUBLIC_ELEVENLABS_AGENT_ID para activarlo."}
           </p>
         </div>
-        <button
-          type="button"
-          disabled
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-dashed border-teal/40 bg-teal/5 text-teal opacity-80"
-          title="Conexión pendiente"
-          aria-label="Activar asistente de voz (próximamente)"
+        <div
+          className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full border ${
+            connected
+              ? "border-teal/50 bg-teal/10 text-teal"
+              : "border-dashed border-teal/40 bg-teal/5 text-teal opacity-80"
+          }`}
+          aria-hidden
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
-            <rect x="7" y="3" width="6" height="10" rx="3" stroke="currentColor" strokeWidth="1.4" />
-            <path d="M4.5 9.5a5.5 5.5 0 0 0 11 0M10 15v2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect
+              x="7"
+              y="3"
+              width="6"
+              height="10"
+              rx="3"
+              stroke="currentColor"
+              strokeWidth="1.4"
+            />
+            <path
+              d="M4.5 9.5a5.5 5.5 0 0 0 11 0M10 15v2"
+              stroke="currentColor"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+            />
           </svg>
-        </button>
+        </div>
       </div>
+
       <div className="mt-3 flex items-center gap-2 rounded-lg bg-paper px-3 py-2">
-        <span className="h-1.5 w-1.5 rounded-full bg-taupe" />
+        <span
+          className={`h-1.5 w-1.5 rounded-full ${
+            connected ? "bg-success" : "bg-taupe"
+          }`}
+        />
         <p className="text-[11px] text-muted">
-          Estado: listo para API key · sin conexión activa
+          {connected
+            ? "Estado: conectado · use el botón flotante para hablar"
+            : "Estado: listo para agent ID · sin conexión activa"}
         </p>
       </div>
+
+      {connected ? (
+        <>
+          <Script
+            src="https://unpkg.com/@elevenlabs/convai-widget-embed"
+            strategy="lazyOnload"
+          />
+          <ElevenLabsConvai agent-id={AGENT_ID} dismissible="true" />
+        </>
+      ) : null}
     </section>
   );
 }
