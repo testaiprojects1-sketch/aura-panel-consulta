@@ -1,12 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import {
+  citasHoy,
   initialApprovals,
   initialTasks,
+  kpis,
   pacientesInactivos as pacientesInactivosSeed,
+  statusStrip,
 } from "@/data/mock";
 import type { ApprovalItem, NavId, Paciente, TaskItem } from "@/types";
+import type { DashboardSnapshot } from "@/lib/conclusiones";
 import Sidebar from "@/components/Sidebar";
 import StatusStrip from "@/components/StatusStrip";
 import KpiRow from "@/components/KpiRow";
@@ -14,7 +18,7 @@ import AgendaHoy from "@/components/AgendaHoy";
 import AprobacionesPendientes from "@/components/AprobacionesPendientes";
 import ChartsRow from "@/components/ChartsRow";
 import PacientesInactivos from "@/components/PacientesInactivos";
-import ElevenLabsWidget from "@/components/ElevenLabsWidget";
+import ElevenLabsAgentWidget from "@/components/ElevenLabsAgentWidget";
 import AccionesTareas from "@/components/AccionesTareas";
 import PacientesPrediccion from "@/components/PacientesPrediccion";
 import KpisSimulador from "@/components/KpisSimulador";
@@ -35,6 +39,30 @@ export default function DashboardShell() {
   const [aprobadasHoy, setAprobadasHoy] = useState(0);
   const [inactivos, setInactivos] = useState(pacientesInactivosSeed);
   const [tasks, setTasks] = useState<TaskItem[]>(initialTasks);
+
+  const snapshot: DashboardSnapshot = useMemo(
+    () => ({
+      fechaLabel: statusStrip.fechaLabel,
+      citasHoy: kpis.citasHoy,
+      tasaConfirmacion: kpis.tasaConfirmacion,
+      presupuestosPendientes: kpis.presupuestosPendientes,
+      porCobrar: kpis.porCobrar,
+      seguimientosPorContactar: statusStrip.seguimientosPorContactar,
+      pacientesNuevosMes: statusStrip.pacientesNuevosMes,
+      aprobacionesEnCola: approvals.length,
+      aprobadasHoy,
+      citasSinRespuesta: citasHoy
+        .filter((c) => c.estado === "Sin respuesta")
+        .map((c) => `${c.hora} ${c.pacienteNombre.split(" ")[0]}`),
+      citasCanceladas: citasHoy
+        .filter((c) => c.estado === "Cancelada")
+        .map((c) => `${c.hora} ${c.pacienteNombre.split(" ")[0]}`),
+      tareasAbiertas: tasks.filter((t) => t.estado === "abierta").length,
+      inactivosAlta: inactivos.filter((p) => p.prioridad === "Alta").length,
+      titulosAprobaciones: approvals.map((a) => a.titulo),
+    }),
+    [approvals, aprobadasHoy, tasks, inactivos]
+  );
 
   const handleAprobar = (id: string) => {
     setApprovals((prev) => prev.filter((a) => a.id !== id));
@@ -114,7 +142,7 @@ export default function DashboardShell() {
                   onAprobar={handleAprobar}
                   onAhoraNo={handleAhoraNo}
                 />
-                <ElevenLabsWidget />
+                <ElevenLabsAgentWidget snapshot={snapshot} />
               </div>
               <ChartsRow />
               <PacientesInactivos
