@@ -2,10 +2,11 @@
  * =============================================================================
  * AURA — Datos de demostración
  * =============================================================================
- * Simulación: estos datos provienen de Google Sheets (consulta de la
- * Dra. Macarena Fontecilla). En producción, AURA leería hojas sincronizadas
- * (pacientes, agenda, presupuestos, cobranza) vía la API de Sheets.
- * Este archivo es un seed estático para el prototipo demo — sin integraciones.
+ * Simulación: consulta de estética facial en Vitacura (Dra. Macarena Fontecilla).
+ * En producción, AURA leería hojas sincronizadas (pacientes, agenda, presupuestos,
+ * cobranza) vía Google Sheets / PMS. Seed estático para el prototipo demo.
+ * Tratamientos: toxina, AH, bioestimuladores, skinboosters, peelings, hilos, etc.
+ * Montos en CLP (ticket típico sector oriente Santiago, 2026).
  * =============================================================================
  */
 
@@ -49,7 +50,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8123 4501",
     email: "maria.perez@email.cl",
     ultimaVisita: "2026-07-18",
-    valorHistorico: 890000,
+    valorHistorico: 1280000,
     activo: true,
   },
   {
@@ -59,7 +60,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8234 5612",
     email: "ji.rojas@email.cl",
     ultimaVisita: "2026-07-20",
-    valorHistorico: 1250000,
+    valorHistorico: 980000,
     activo: true,
   },
   {
@@ -69,7 +70,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8345 6723",
     email: "camila.soto@email.cl",
     ultimaVisita: "2026-07-15",
-    valorHistorico: 640000,
+    valorHistorico: 740000,
     activo: true,
   },
   {
@@ -79,7 +80,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8456 7834",
     email: "f.valdes@email.cl",
     ultimaVisita: "2026-07-21",
-    valorHistorico: 2100000,
+    valorHistorico: 2850000,
     activo: true,
   },
   {
@@ -89,7 +90,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8567 8945",
     email: "vale.contreras@email.cl",
     ultimaVisita: "2026-07-10",
-    valorHistorico: 480000,
+    valorHistorico: 520000,
     activo: true,
   },
   {
@@ -99,7 +100,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8678 9056",
     email: "andres.morales@email.cl",
     ultimaVisita: "2026-07-19",
-    valorHistorico: 1750000,
+    valorHistorico: 1920000,
     activo: true,
   },
   {
@@ -109,7 +110,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8789 0167",
     email: "fran.leiva@email.cl",
     ultimaVisita: "2026-07-08",
-    valorHistorico: 920000,
+    valorHistorico: 1150000,
     activo: true,
   },
   {
@@ -119,7 +120,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8890 1278",
     email: "matias.espinoza@email.cl",
     ultimaVisita: "2026-07-22",
-    valorHistorico: 560000,
+    valorHistorico: 89000,
     activo: true,
   },
   {
@@ -129,7 +130,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8901 2389",
     email: "daniela.herrera@email.cl",
     ultimaVisita: "2026-07-12",
-    valorHistorico: 1340000,
+    valorHistorico: 1680000,
     activo: true,
   },
   {
@@ -139,7 +140,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8012 3490",
     email: "seba.campos@email.cl",
     ultimaVisita: "2026-07-17",
-    valorHistorico: 710000,
+    valorHistorico: 640000,
     activo: true,
   },
   {
@@ -149,7 +150,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8123 4502",
     email: "coni.figueroa@email.cl",
     ultimaVisita: "2026-07-14",
-    valorHistorico: 980000,
+    valorHistorico: 1320000,
     activo: true,
   },
   {
@@ -159,7 +160,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8234 5613",
     email: "felipe.araya@email.cl",
     ultimaVisita: "2026-07-05",
-    valorHistorico: 1580000,
+    valorHistorico: 1780000,
     activo: true,
   },
   {
@@ -169,7 +170,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8345 6724",
     email: "javiera.paredes@email.cl",
     ultimaVisita: "2026-07-16",
-    valorHistorico: 430000,
+    valorHistorico: 380000,
     activo: true,
   },
   {
@@ -179,7 +180,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8456 7835",
     email: "cris.mendoza@email.cl",
     ultimaVisita: "2026-07-11",
-    valorHistorico: 1120000,
+    valorHistorico: 890000,
     activo: true,
   },
   {
@@ -189,7 +190,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8567 8946",
     email: "antonia.bravo@email.cl",
     ultimaVisita: "2026-07-09",
-    valorHistorico: 670000,
+    valorHistorico: 720000,
     activo: true,
   },
   {
@@ -199,7 +200,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8678 9057",
     email: "nico.fuentes@email.cl",
     ultimaVisita: "2026-07-13",
-    valorHistorico: 850000,
+    valorHistorico: 910000,
     activo: true,
   },
   {
@@ -209,7 +210,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8789 0168",
     email: "isi.castro@email.cl",
     ultimaVisita: "2026-07-07",
-    valorHistorico: 1490000,
+    valorHistorico: 2140000,
     activo: true,
   },
   {
@@ -219,7 +220,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8890 1279",
     email: "tomas.vidal@email.cl",
     ultimaVisita: "2026-07-21",
-    valorHistorico: 520000,
+    valorHistorico: 580000,
     activo: true,
   },
   {
@@ -229,7 +230,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8901 2390",
     email: "cata.munoz@email.cl",
     ultimaVisita: "2026-07-06",
-    valorHistorico: 760000,
+    valorHistorico: 860000,
     activo: true,
   },
   {
@@ -239,7 +240,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8012 3491",
     email: "diego.sepulveda@email.cl",
     ultimaVisita: "2026-07-19",
-    valorHistorico: 1890000,
+    valorHistorico: 2450000,
     activo: true,
   },
   {
@@ -249,7 +250,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8123 4503",
     email: "paula.ramirez@email.cl",
     ultimaVisita: "2026-07-04",
-    valorHistorico: 610000,
+    valorHistorico: 690000,
     activo: true,
   },
   {
@@ -259,7 +260,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8234 5614",
     email: "rodrigo.henriquez@email.cl",
     ultimaVisita: "2026-07-02",
-    valorHistorico: 1030000,
+    valorHistorico: 1180000,
     activo: true,
   },
   // Pacientes inactivos (9+ meses sin visita)
@@ -270,7 +271,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8345 6725",
     email: "lorena.aguilar@email.cl",
     ultimaVisita: "2025-09-12",
-    valorHistorico: 1420000,
+    valorHistorico: 1680000,
     activo: false,
     prioridad: "Alta",
   },
@@ -281,7 +282,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8456 7836",
     email: "gonzalo.pizarro@email.cl",
     ultimaVisita: "2025-08-03",
-    valorHistorico: 980000,
+    valorHistorico: 1120000,
     activo: false,
     prioridad: "Alta",
   },
@@ -292,7 +293,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8567 8947",
     email: "marcela.torrealba@email.cl",
     ultimaVisita: "2025-10-21",
-    valorHistorico: 720000,
+    valorHistorico: 840000,
     activo: false,
     prioridad: "Media",
   },
@@ -303,7 +304,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8678 9058",
     email: "patricio.godoy@email.cl",
     ultimaVisita: "2025-07-18",
-    valorHistorico: 1650000,
+    valorHistorico: 1950000,
     activo: false,
     prioridad: "Alta",
   },
@@ -314,7 +315,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8789 0169",
     email: "beatriz.salinas@email.cl",
     ultimaVisita: "2025-11-05",
-    valorHistorico: 540000,
+    valorHistorico: 620000,
     activo: false,
     prioridad: "Baja",
   },
@@ -325,7 +326,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8890 1280",
     email: "hector.nunez@email.cl",
     ultimaVisita: "2025-06-28",
-    valorHistorico: 2100000,
+    valorHistorico: 2680000,
     activo: false,
     prioridad: "Alta",
   },
@@ -336,7 +337,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8901 2391",
     email: "sofia.delgado@email.cl",
     ultimaVisita: "2025-10-02",
-    valorHistorico: 880000,
+    valorHistorico: 980000,
     activo: false,
     prioridad: "Media",
   },
@@ -347,7 +348,7 @@ export const pacientes: Paciente[] = [
     telefono: "+56 9 8012 3492",
     email: "mauricio.beltran@email.cl",
     ultimaVisita: "2025-09-30",
-    valorHistorico: 1190000,
+    valorHistorico: 1340000,
     activo: false,
     prioridad: "Media",
   },
@@ -362,7 +363,7 @@ export const citasSemana: Cita[] = [
     hora: "09:00",
     pacienteId: "p02",
     pacienteNombre: "José Ignacio Rojas",
-    tratamiento: "Evaluación inicial",
+    tratamiento: "Evaluación facial + fotos",
     estado: "Confirmada",
   },
   {
@@ -371,7 +372,7 @@ export const citasSemana: Cita[] = [
     hora: "10:30",
     pacienteId: "p07",
     pacienteNombre: "Francisca Leiva",
-    tratamiento: "Sesión de plan",
+    tratamiento: "Toxina botulínica · tercio superior",
     estado: "Confirmada",
   },
   {
@@ -380,7 +381,7 @@ export const citasSemana: Cita[] = [
     hora: "15:00",
     pacienteId: "p12",
     pacienteNombre: "Felipe Araya Núñez",
-    tratamiento: "Control post-tratamiento",
+    tratamiento: "Control 15 días · bioestimulador",
     estado: "Cancelada",
   },
   // Martes 21
@@ -390,7 +391,7 @@ export const citasSemana: Cita[] = [
     hora: "09:30",
     pacienteId: "p04",
     pacienteNombre: "Francisco Valdés",
-    tratamiento: "Sesión de plan",
+    tratamiento: "Armonización facial · sesión 3/4",
     estado: "Confirmada",
   },
   {
@@ -399,7 +400,7 @@ export const citasSemana: Cita[] = [
     hora: "11:00",
     pacienteId: "p18",
     pacienteNombre: "Tomás Vidal Reyes",
-    tratamiento: "Blanqueamiento",
+    tratamiento: "Ácido hialurónico · mentón",
     estado: "Confirmada",
   },
   {
@@ -408,7 +409,7 @@ export const citasSemana: Cita[] = [
     hora: "16:00",
     pacienteId: "p20",
     pacienteNombre: "Diego Sepúlveda",
-    tratamiento: "Armonización facial",
+    tratamiento: "Revisión volumen · surcos nasogenianos",
     estado: "Sin respuesta",
   },
   // Miércoles 22 — HOY
@@ -418,7 +419,7 @@ export const citasSemana: Cita[] = [
     hora: "09:00",
     pacienteId: "p08",
     pacienteNombre: "Matías Espinoza",
-    tratamiento: "Evaluación inicial",
+    tratamiento: "Primera evaluación facial",
     estado: "Confirmada",
   },
   {
@@ -427,7 +428,7 @@ export const citasSemana: Cita[] = [
     hora: "10:30",
     pacienteId: "p01",
     pacienteNombre: "María Pérez González",
-    tratamiento: "Sesión de plan",
+    tratamiento: "Skinbooster · mejillas (sesión 1/3)",
     estado: "Confirmada",
   },
   {
@@ -436,7 +437,7 @@ export const citasSemana: Cita[] = [
     hora: "12:00",
     pacienteId: "p11",
     pacienteNombre: "Constanza Figueroa",
-    tratamiento: "Control post-tratamiento",
+    tratamiento: "Control post-toxina (día 14)",
     estado: "Sin respuesta",
   },
   {
@@ -445,7 +446,7 @@ export const citasSemana: Cita[] = [
     hora: "15:00",
     pacienteId: "p06",
     pacienteNombre: "Andrés Morales Lagos",
-    tratamiento: "Diseño de sonrisa",
+    tratamiento: "Perfiloplastia · labios + mentón",
     estado: "Confirmada",
   },
   {
@@ -454,7 +455,7 @@ export const citasSemana: Cita[] = [
     hora: "16:30",
     pacienteId: "p05",
     pacienteNombre: "Valentina Contreras",
-    tratamiento: "Toxina botulínica",
+    tratamiento: "Toxina botulínica · primera vez",
     estado: "Cancelada",
   },
   // Jueves 23
@@ -464,7 +465,7 @@ export const citasSemana: Cita[] = [
     hora: "09:00",
     pacienteId: "p09",
     pacienteNombre: "Daniela Herrera Silva",
-    tratamiento: "Sesión de plan",
+    tratamiento: "Armonización · revisión proporciones",
     estado: "Confirmada",
   },
   {
@@ -473,7 +474,7 @@ export const citasSemana: Cita[] = [
     hora: "11:00",
     pacienteId: "p14",
     pacienteNombre: "Cristóbal Mendoza",
-    tratamiento: "Evaluación inicial",
+    tratamiento: "Evaluación inicial presencial",
     estado: "Sin respuesta",
   },
   {
@@ -482,7 +483,7 @@ export const citasSemana: Cita[] = [
     hora: "15:30",
     pacienteId: "p03",
     pacienteNombre: "Camila Soto Muñoz",
-    tratamiento: "Control post-tratamiento",
+    tratamiento: "Retoque toxina · ventana 6 meses",
     estado: "Confirmada",
   },
   // Viernes 24
@@ -492,7 +493,7 @@ export const citasSemana: Cita[] = [
     hora: "09:30",
     pacienteId: "p17",
     pacienteNombre: "Isidora Castro",
-    tratamiento: "Armonización facial",
+    tratamiento: "Armonización facial · sesión 2/3",
     estado: "Confirmada",
   },
   {
@@ -501,7 +502,7 @@ export const citasSemana: Cita[] = [
     hora: "11:30",
     pacienteId: "p10",
     pacienteNombre: "Sebastián Campos",
-    tratamiento: "Sesión de plan",
+    tratamiento: "Peeling químico medio + plan",
     estado: "Sin respuesta",
   },
   {
@@ -510,7 +511,7 @@ export const citasSemana: Cita[] = [
     hora: "14:00",
     pacienteId: "p16",
     pacienteNombre: "Nicolás Fuentes",
-    tratamiento: "Blanqueamiento",
+    tratamiento: "Toxina masaeteros (bruxismo)",
     estado: "Confirmada",
   },
   {
@@ -519,7 +520,7 @@ export const citasSemana: Cita[] = [
     hora: "16:00",
     pacienteId: "p13",
     pacienteNombre: "Javiera Paredes",
-    tratamiento: "Evaluación inicial",
+    tratamiento: "Primera evaluación facial",
     estado: "Confirmada",
   },
   // Sábado 25
@@ -529,7 +530,7 @@ export const citasSemana: Cita[] = [
     hora: "10:00",
     pacienteId: "p15",
     pacienteNombre: "Antonia Bravo",
-    tratamiento: "Sesión de plan",
+    tratamiento: "AH labios · natural",
     estado: "Confirmada",
   },
   {
@@ -538,7 +539,7 @@ export const citasSemana: Cita[] = [
     hora: "11:30",
     pacienteId: "p19",
     pacienteNombre: "Catalina Muñoz Ortiz",
-    tratamiento: "Control post-tratamiento",
+    tratamiento: "Control + reevaluación facial",
     estado: "Sin respuesta",
   },
 ];
@@ -549,7 +550,7 @@ export const presupuestos: Presupuesto[] = [
     numero: 1038,
     pacienteId: "p04",
     pacienteNombre: "Francisco Valdés",
-    monto: 890000,
+    monto: 1450000,
     estado: "Aceptado",
     fechaEmision: "2026-07-02",
   },
@@ -558,7 +559,7 @@ export const presupuestos: Presupuesto[] = [
     numero: 1039,
     pacienteId: "p02",
     pacienteNombre: "José Ignacio Rojas",
-    monto: 1250000,
+    monto: 680000,
     estado: "Aceptado",
     fechaEmision: "2026-07-05",
   },
@@ -567,7 +568,7 @@ export const presupuestos: Presupuesto[] = [
     numero: 1040,
     pacienteId: "p06",
     pacienteNombre: "Andrés Morales Lagos",
-    monto: 680000,
+    monto: 920000,
     estado: "Seguido",
     fechaEmision: "2026-07-08",
   },
@@ -576,7 +577,7 @@ export const presupuestos: Presupuesto[] = [
     numero: 1041,
     pacienteId: "p09",
     pacienteNombre: "Daniela Herrera Silva",
-    monto: 540000,
+    monto: 780000,
     estado: "Emitido",
     fechaEmision: "2026-07-10",
   },
@@ -585,7 +586,7 @@ export const presupuestos: Presupuesto[] = [
     numero: 1042,
     pacienteId: "p17",
     pacienteNombre: "Isidora Castro",
-    monto: 450000,
+    monto: 650000,
     estado: "Pendiente seguimiento",
     fechaEmision: "2026-07-11",
   },
@@ -594,7 +595,7 @@ export const presupuestos: Presupuesto[] = [
     numero: 1043,
     pacienteId: "p20",
     pacienteNombre: "Diego Sepúlveda",
-    monto: 980000,
+    monto: 1180000,
     estado: "Pendiente seguimiento",
     fechaEmision: "2026-07-12",
   },
@@ -603,7 +604,7 @@ export const presupuestos: Presupuesto[] = [
     numero: 1044,
     pacienteId: "p01",
     pacienteNombre: "María Pérez González",
-    monto: 320000,
+    monto: 540000,
     estado: "Seguido",
     fechaEmision: "2026-07-14",
   },
@@ -612,7 +613,7 @@ export const presupuestos: Presupuesto[] = [
     numero: 1045,
     pacienteId: "p11",
     pacienteNombre: "Constanza Figueroa",
-    monto: 760000,
+    monto: 420000,
     estado: "Emitido",
     fechaEmision: "2026-07-15",
   },
@@ -621,7 +622,7 @@ export const presupuestos: Presupuesto[] = [
     numero: 1046,
     pacienteId: "p14",
     pacienteNombre: "Cristóbal Mendoza",
-    monto: 1100000,
+    monto: 890000,
     estado: "Pendiente seguimiento",
     fechaEmision: "2026-07-16",
   },
@@ -630,7 +631,7 @@ export const presupuestos: Presupuesto[] = [
     numero: 1047,
     pacienteId: "p07",
     pacienteNombre: "Francisca Leiva",
-    monto: 420000,
+    monto: 380000,
     estado: "Aceptado",
     fechaEmision: "2026-07-17",
   },
@@ -639,7 +640,7 @@ export const presupuestos: Presupuesto[] = [
     numero: 1048,
     pacienteId: "p03",
     pacienteNombre: "Camila Soto Muñoz",
-    monto: 295000,
+    monto: 320000,
     estado: "Emitido",
     fechaEmision: "2026-07-18",
   },
@@ -648,7 +649,7 @@ export const presupuestos: Presupuesto[] = [
     numero: 1049,
     pacienteId: "p12",
     pacienteNombre: "Felipe Araya Núñez",
-    monto: 870000,
+    monto: 980000,
     estado: "Pendiente seguimiento",
     fechaEmision: "2026-07-20",
   },
@@ -657,50 +658,50 @@ export const presupuestos: Presupuesto[] = [
 export const initialApprovals: ApprovalItem[] = [
   {
     id: "a01",
-    titulo: "Recordatorio de pago a M. Pérez — $180.000",
+    titulo: "Recordatorio de pago a M. Pérez — $190.000",
     mensajeWhatsApp:
-      "Hola María, te escribe la consulta de la Dra. Fontecilla. Te recordamos que tienes un saldo pendiente de $180.000. ¿Prefieres transferir o pagar en tu próxima visita? Quedamos atentos 🙂",
+      "Hola María, te escribe la consulta de la Dra. Fontecilla (Vitacura). Te recordamos el saldo pendiente de $190.000 del pack skinbooster. ¿Prefieres transferir o pagar en tu sesión de hoy? Quedamos atentos 🙂",
     origen: "sistema",
   },
   {
     id: "a02",
-    titulo: "Campaña de reactivación: 5 pacientes 9+ meses",
+    titulo: "Campaña reactivación: toxina vencida 9+ meses",
     mensajeWhatsApp:
-      "Hola {nombre}, hace tiempo que no nos vemos en la consulta. La Dra. Fontecilla tiene cupos esta semana para un control y evaluación. ¿Te agendo? Responde a este WhatsApp.",
+      "Hola {nombre}, hace tiempo que no nos vemos. La Dra. Fontecilla tiene cupos esta semana para un control facial y, si corresponde, retoque de toxina. ¿Te agendo? Responde a este WhatsApp.",
     origen: "campaña",
   },
   {
     id: "a03",
-    titulo: "Seguimiento de presupuesto #1042 — $450.000",
+    titulo: "Seguimiento presupuesto #1042 — armonización $650.000",
     mensajeWhatsApp:
-      "Hola Isidora, ¿pudiste revisar el presupuesto #1042 por $450.000? Si tienes dudas, la Dra. Fontecilla puede aclarártelas en una breve llamada. ¿Te parece mañana a las 11?",
+      "Hola Isidora, ¿pudiste revisar el presupuesto #1042 de armonización facial por $650.000? Si tienes dudas sobre zonas o producto, la Dra. puede aclarártelas en una breve llamada. ¿Te parece mañana a las 11?",
     origen: "sistema",
   },
   {
     id: "a04",
     titulo: "Confirmación de cita — C. Figueroa, 12:00",
     mensajeWhatsApp:
-      "Hola Constanza, te confirmamos tu control de hoy a las 12:00 con la Dra. Fontecilla. Responde SÍ para confirmar o REAGENDAR si necesitas cambiar.",
+      "Hola Constanza, te confirmamos tu control post-toxina de hoy a las 12:00 con la Dra. Fontecilla en Vitacura. Responde SÍ para confirmar o REAGENDAR si necesitas cambiar.",
     origen: "sistema",
   },
   {
     id: "a05",
-    titulo: "Reel: «Primera visita en Vitacura» — borrador",
+    titulo: "Reel: «Primera evaluación facial en Vitacura»",
     mensajeWhatsApp:
-      "Guion propuesto: 15 s · recepción cálida → evaluación digital → resultado natural. CTA: agenda tu evaluación. ¿Lo publicamos el jueves 18:00?",
+      "Guion propuesto: 15 s · recepción → fotos + análisis facial → plan natural sin sobretratamiento. CTA: agenda tu evaluación. ¿Lo publicamos el jueves 18:00?",
     origen: "contenido",
   },
 ];
 
 export const citasPorSemana: WeeklyCitasPoint[] = [
-  { semana: "Sem 1", citas: 14 },
-  { semana: "Sem 2", citas: 18 },
-  { semana: "Sem 3", citas: 16 },
-  { semana: "Sem 4", citas: 21 },
-  { semana: "Sem 5", citas: 19 },
-  { semana: "Sem 6", citas: 17 },
-  { semana: "Sem 7", citas: 22 },
-  { semana: "Sem 8", citas: 20 },
+  { semana: "Sem 1", citas: 16 },
+  { semana: "Sem 2", citas: 19 },
+  { semana: "Sem 3", citas: 17 },
+  { semana: "Sem 4", citas: 22 },
+  { semana: "Sem 5", citas: 20 },
+  { semana: "Sem 6", citas: 18 },
+  { semana: "Sem 7", citas: 23 },
+  { semana: "Sem 8", citas: 21 },
 ];
 
 export const funnelPresupuestos: FunnelPoint[] = [
@@ -715,13 +716,13 @@ export const kpis = {
   citasHoyTrend: { label: "+1 vs ayer", direction: "up" as const },
   tasaConfirmacion: 72,
   tasaConfirmacionTrend: { label: "+4 pts", direction: "up" as const },
-  presupuestosPendientes: 3210000,
+  presupuestosPendientes: 4120000,
   presupuestosPendientesTrend: {
-    label: "4 presupuestos",
+    label: "4 presupuestos faciales",
     direction: "flat" as const,
   },
-  porCobrar: 1240000,
-  porCobrarTrend: { label: "−$80.000", direction: "down" as const },
+  porCobrar: 1380000,
+  porCobrarTrend: { label: "−$60.000", direction: "down" as const },
 };
 
 export const HOY_FECHA = "2026-07-22";

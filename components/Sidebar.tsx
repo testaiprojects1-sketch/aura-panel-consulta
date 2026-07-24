@@ -71,7 +71,7 @@ export default function Sidebar({ active, onNavigate, aprobadasHoy }: SidebarPro
           Panel de la Consulta
         </h1>
         <p className="mt-1 text-[11px] leading-relaxed text-muted">
-          Dra. Macarena Fontecilla
+          Dra. Macarena Fontecilla · Estética facial · Vitacura
         </p>
       </div>
 

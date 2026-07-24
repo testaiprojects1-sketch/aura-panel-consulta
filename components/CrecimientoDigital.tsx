@@ -141,7 +141,7 @@ export default function CrecimientoDigital({
           Mejores días y horas
         </h3>
         <p className="mt-1 text-[11px] text-muted">
-          Referencia del sector salud-estética en Chile
+          Referencia del sector estética facial en Chile (oriente)
         </p>
         <div className="mt-4 overflow-x-auto">
           <table className="w-full border-separate border-spacing-1">

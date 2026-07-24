@@ -9,9 +9,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "AURA — Panel de la Consulta · Dra. Macarena Fontecilla",
+  title: "AURA — Estética facial · Dra. Macarena Fontecilla",
   description:
-    "Panel interno de la consulta. AURA propone, usted aprueba. Demo con datos simulados desde Google Sheets.",
+    "Panel interno de consulta de estética facial (Vitacura). AURA propone, usted aprueba. Demo con datos simulados.",
   robots: {
     index: false,
     follow: false,

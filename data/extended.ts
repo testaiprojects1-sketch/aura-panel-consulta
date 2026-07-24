@@ -2,8 +2,8 @@
  * =============================================================================
  * AURA — Datos adicionales de demostración (v2 módulos)
  * =============================================================================
- * Simulación: estos datos se complementarían desde Google Sheets / Dentalink.
- * Seed liviano para demo — los módulos se llenan solos con cada paciente real.
+ * Consulta de estética facial · Vitacura. Seed liviano para demo — los módulos
+ * se llenan solos con cada paciente real / Sheet sincronizado.
  * =============================================================================
  */
 
@@ -23,69 +23,69 @@ import type {
 export const statusStrip: StatusStripData = {
   fechaLabel: "Miércoles 22 de julio de 2026",
   seguimientosPorContactar: 7,
-  pacientesNuevosMes: 4,
+  pacientesNuevosMes: 5,
 };
 
 export const initialTasks: TaskItem[] = [
   // Diaria
   {
     id: "t01",
-    titulo: "Confirmar cita 12:00 — C. Figueroa",
+    titulo: "Confirmar control post-toxina 12:00 — C. Figueroa",
     owner: "Enfermera",
-    rationale: "Sin respuesta hace 18 h · evita no-show de $95.000",
-    recuperableCLP: 95000,
+    rationale: "Sin respuesta hace 18 h · evita no-show de $0 (control) y pierde upsell",
+    recuperableCLP: 120000,
     cadencia: "diaria",
     estado: "abierta",
   },
   {
     id: "t02",
-    titulo: "Cobrar saldo M. Pérez — $180.000",
+    titulo: "Cobrar saldo M. Pérez — $190.000 (skinbooster)",
     owner: "Dra. Macarena",
-    rationale: "Factura vencida 12 días · recuperable $180.000",
-    recuperableCLP: 180000,
+    rationale: "Factura vencida 12 días · pack sesión 1/3",
+    recuperableCLP: 190000,
     cadencia: "diaria",
     estado: "abierta",
   },
   {
     id: "t03",
-    titulo: "Reasignar cupo 16:30 (cancelación V. Contreras)",
+    titulo: "Reasignar cupo 16:30 (cancelación V. Contreras · toxina)",
     owner: "Enfermera",
-    rationale: "Cupo liberado · lista de espera con 2 candidatas",
+    rationale: "Cupo liberado · lista de espera con 2 candidatas a toxina",
     cadencia: "diaria",
     estado: "abierta",
   },
   {
     id: "t04",
-    titulo: "Preparar kit armonización — A. Morales 15:00",
+    titulo: "Preparar kit perfiloplastia — A. Morales 15:00",
     owner: "Enfermera",
-    rationale: "Sesión 2 de 3 · protocolo listo en ficha",
+    rationale: "AH labios + mentón · protocolo y lotes listos en ficha",
     cadencia: "diaria",
     estado: "cerrada",
   },
   // Semanal
   {
     id: "t05",
-    titulo: "Seguimiento presupuesto #1042 — I. Castro",
+    titulo: "Seguimiento presupuesto #1042 — I. Castro (armonización)",
     owner: "Dra. Macarena",
-    rationale: "Emitido hace 11 días · $450.000 en pipeline",
-    recuperableCLP: 450000,
+    rationale: "Emitido hace 11 días · $650.000 en pipeline facial",
+    recuperableCLP: 650000,
     cadencia: "semanal",
     estado: "abierta",
   },
   {
     id: "t06",
-    titulo: "Campaña reactivación — 5 pacientes 9+ meses",
+    titulo: "Campaña reactivación — 5 pacientes toxina vencida 9+ meses",
     owner: "Dra. Macarena",
-    rationale: "Prioridad Alta · ~$6.2 M histórico acumulado",
-    recuperableCLP: 2100000,
+    rationale: "Prioridad Alta · ~$7,8 M histórico acumulado en cartera inactiva",
+    recuperableCLP: 2600000,
     cadencia: "semanal",
     estado: "abierta",
   },
   {
     id: "t07",
-    titulo: "Revisar lista de espera jueves–viernes",
+    titulo: "Revisar lista de espera jueves–sábado (AH / toxina)",
     owner: "Enfermera",
-    rationale: "3 cupos abiertos · relleno reduce ociosidad",
+    rationale: "3 cupos abiertos · relleno reduce ociosidad de box",
     cadencia: "semanal",
     estado: "abierta",
   },
@@ -93,42 +93,42 @@ export const initialTasks: TaskItem[] = [
     id: "t08",
     titulo: "Aprobar piezas WhatsApp de la semana",
     owner: "Dra. Macarena",
-    rationale: "4 borradores en cola de AURA",
+    rationale: "4 borradores en cola de AURA (reactivación + contenido Vitacura)",
     cadencia: "semanal",
     estado: "bloqueada",
   },
   // Mensual
   {
     id: "t09",
-    titulo: "Lanzar membresía control semestral",
+    titulo: "Lanzar membresía mantenimiento facial (4 controles/año)",
     owner: "Dra. Macarena",
-    rationale: "Meta: 8 altas · ingreso recurrente estimado $1,6 M/año",
-    recuperableCLP: 1600000,
+    rationale: "Meta: 8 altas · ingreso recurrente estimado $2,4 M/año",
+    recuperableCLP: 2400000,
     cadencia: "mensual",
     estado: "abierta",
   },
   {
     id: "t10",
-    titulo: "Auditoría de controles vencidos 6 meses",
+    titulo: "Auditoría de toxinas vencidas 5–6 meses",
     owner: "Enfermera",
-    rationale: "12 pacientes · pérdida potencial $3,4 M a 1 año",
-    recuperableCLP: 3400000,
+    rationale: "14 pacientes · pérdida potencial $4,2 M a 1 año si no retocan",
+    recuperableCLP: 4200000,
     cadencia: "mensual",
     estado: "abierta",
   },
   {
     id: "t11",
-    titulo: "Calibrar ticket promedio vs. industria",
+    titulo: "Calibrar ticket promedio vs. estética facial oriente",
     owner: "Dra. Macarena",
-    rationale: "Actual $285k · meta $340k · gap en packs faciales",
+    rationale: "Actual $320k · meta $380k · gap en packs armonización + boosters",
     cadencia: "mensual",
     estado: "abierta",
   },
   {
     id: "t12",
-    titulo: "Plan de contenido primeros 90 días",
+    titulo: "Plan de contenido primeros 90 días (IG/TikTok facial)",
     owner: "Dra. Macarena",
-    rationale: "Cuentas en cero · AURA propone calendario semanal",
+    rationale: "Cuentas en cero · AURA propone calendario (antes/después, educación)",
     cadencia: "mensual",
     estado: "bloqueada",
   },
@@ -142,10 +142,10 @@ export const patientCards: PatientCard[] = [
     iniciales: "FV",
     lealtad: "VIP",
     edad: 42,
-    ultimoTratamiento: "Diseño de sonrisa",
+    ultimoTratamiento: "Armonización facial",
     sesionActual: 3,
     sesionTotal: 4,
-    lifetimeValue: 2100000,
+    lifetimeValue: 2850000,
   },
   {
     id: "pc02",
@@ -153,11 +153,11 @@ export const patientCards: PatientCard[] = [
     iniciales: "MP",
     lealtad: "Regular",
     edad: 38,
-    ultimoTratamiento: "Sesión de plan",
+    ultimoTratamiento: "Skinbooster mejillas",
     sesionActual: 1,
     sesionTotal: 3,
-    lifetimeValue: 890000,
-    alerta: "Plan a medio terminar",
+    lifetimeValue: 1280000,
+    alerta: "Pack a medio terminar · saldo $190.000",
   },
   {
     id: "pc03",
@@ -165,9 +165,9 @@ export const patientCards: PatientCard[] = [
     iniciales: "LA",
     lealtad: "En riesgo",
     edad: 45,
-    ultimoTratamiento: "Control post-tratamiento",
-    lifetimeValue: 1420000,
-    alerta: "Sin actividad 313 días",
+    ultimoTratamiento: "Toxina full face",
+    lifetimeValue: 1680000,
+    alerta: "Sin actividad 313 días · toxina vencida",
   },
   {
     id: "pc04",
@@ -178,7 +178,7 @@ export const patientCards: PatientCard[] = [
     ultimoTratamiento: "Armonización facial",
     sesionActual: 2,
     sesionTotal: 3,
-    lifetimeValue: 1490000,
+    lifetimeValue: 2140000,
   },
   {
     id: "pc05",
@@ -186,8 +186,8 @@ export const patientCards: PatientCard[] = [
     iniciales: "GP",
     lealtad: "En riesgo",
     edad: 51,
-    ultimoTratamiento: "Blanqueamiento",
-    lifetimeValue: 980000,
+    ultimoTratamiento: "AH surcos + toxina",
+    lifetimeValue: 1120000,
     alerta: "Control vencido hace 142 días",
   },
   {
@@ -196,9 +196,9 @@ export const patientCards: PatientCard[] = [
     iniciales: "CF",
     lealtad: "Regular",
     edad: 29,
-    ultimoTratamiento: "Control post-tratamiento",
-    lifetimeValue: 980000,
-    alerta: "Control vencido hace 8 días",
+    ultimoTratamiento: "Control post-toxina",
+    lifetimeValue: 1320000,
+    alerta: "Control día 14 sin confirmar",
   },
 ];
 
@@ -207,39 +207,39 @@ export const loyaltyBuckets: LoyaltyBucket[] = [
     tier: "VIP",
     count: 6,
     recuperableCLP: 0,
-    note: "Retener con controles y packs — base sólida",
+    note: "Retener con controles y packs de armonización — base sólida",
   },
   {
     tier: "Regular",
     count: 14,
-    recuperableCLP: 980000,
-    note: "campaña dirigida ≈ $980.000 recuperable",
+    recuperableCLP: 1120000,
+    note: "campaña toxina/booster ≈ $1.120.000 recuperable",
   },
   {
     tier: "En riesgo",
     count: 8,
-    recuperableCLP: 4200000,
-    note: "campaña dirigida ≈ $4.200.000 recuperable",
+    recuperableCLP: 4800000,
+    note: "reactivación toxina vencida ≈ $4.800.000 recuperable",
   },
 ];
 
 export const riskStats: RiskStat[] = [
   {
     id: "r1",
-    label: "Controles vencidos 6m",
-    value: "12",
-    hint: "Pacientes sin control en el semestre",
+    label: "Toxinas vencidas 5–6m",
+    value: "14",
+    hint: "Pacientes fuera de ventana ideal de retoque",
   },
   {
     id: "r2",
     label: "Riesgo anual de fuga",
-    value: "18%",
-    hint: "Proyección sobre cartera activa",
+    value: "19%",
+    hint: "Proyección sobre cartera activa facial",
   },
   {
     id: "r3",
     label: "Pérdida potencial a 1 año",
-    value: "$3.400.000",
+    value: "$4.200.000",
     hint: "LTV en riesgo si no se reactiva",
   },
 ];
@@ -248,31 +248,31 @@ export const leadCards: LeadCard[] = [
   {
     id: "l01",
     nombre: "Amanda Riquelme",
-    probabilidad: 72,
+    probabilidad: 74,
     ocupacion: "Arquitecta",
     comuna: "Vitacura",
     canal: "Instagram",
-    tratamientoSugerido: "Evaluación + diseño de sonrisa",
+    tratamientoSugerido: "Evaluación + toxina preventiva",
     ingresoMensualEst: 2800000,
   },
   {
     id: "l02",
     nombre: "Martín Orellana",
-    probabilidad: 54,
+    probabilidad: 58,
     ocupacion: "Emprendedor",
     comuna: "Las Condes",
     canal: "Referido",
-    tratamientoSugerido: "Armonización facial",
+    tratamientoSugerido: "Armonización · mentón + mandíbula",
     ingresoMensualEst: 3500000,
   },
   {
     id: "l03",
     nombre: "Pía Sandoval",
-    probabilidad: 41,
+    probabilidad: 46,
     ocupacion: "Abogada",
     comuna: "Providencia",
     canal: "Google",
-    tratamientoSugerido: "Blanqueamiento + control",
+    tratamientoSugerido: "AH labios natural + control",
     ingresoMensualEst: 2200000,
   },
 ];
@@ -281,48 +281,48 @@ export const benchmarkKpis: BenchmarkKpi[] = [
   {
     id: "ticket",
     label: "Ticket promedio",
-    actual: 285000,
-    industria: 310000,
-    meta: 340000,
+    actual: 320000,
+    industria: 345000,
+    meta: 380000,
     format: "clp",
   },
   {
     id: "ltv",
     label: "LTV",
-    actual: 1180000,
-    industria: 1350000,
-    meta: 1600000,
+    actual: 1420000,
+    industria: 1580000,
+    meta: 1900000,
     format: "clp",
   },
   {
     id: "vip",
     label: "% VIP",
-    actual: 20,
+    actual: 22,
     industria: 18,
-    meta: 28,
+    meta: 30,
     format: "percent",
   },
   {
     id: "controles",
     label: "Controles a tiempo",
-    actual: 62,
-    industria: 71,
-    meta: 85,
+    actual: 64,
+    industria: 73,
+    meta: 88,
     format: "percent",
   },
 ];
 
 export const trendSeries: TrendPoint[] = [
-  { mes: "Feb", ticket: 250000, ltv: 980000, vip: 14, controles: 55 },
-  { mes: "Mar", ticket: 260000, ltv: 1020000, vip: 15, controles: 57 },
-  { mes: "Abr", ticket: 268000, ltv: 1080000, vip: 16, controles: 58 },
-  { mes: "May", ticket: 275000, ltv: 1120000, vip: 18, controles: 60 },
-  { mes: "Jun", ticket: 280000, ltv: 1150000, vip: 19, controles: 61 },
-  { mes: "Jul", ticket: 285000, ltv: 1180000, vip: 20, controles: 62 },
+  { mes: "Feb", ticket: 280000, ltv: 1180000, vip: 16, controles: 56 },
+  { mes: "Mar", ticket: 290000, ltv: 1220000, vip: 17, controles: 58 },
+  { mes: "Abr", ticket: 298000, ltv: 1280000, vip: 18, controles: 59 },
+  { mes: "May", ticket: 305000, ltv: 1320000, vip: 19, controles: 61 },
+  { mes: "Jun", ticket: 312000, ltv: 1380000, vip: 21, controles: 63 },
+  { mes: "Jul", ticket: 320000, ltv: 1420000, vip: 22, controles: 64 },
 ];
 
-/** Base anual de ingresos de la consulta (demo). */
-export const ingresoAnualBase = 48000000;
+/** Base anual de ingresos de la consulta facial (demo Vitacura). */
+export const ingresoAnualBase = 62000000;
 
 export const simulatorDefaults = {
   noShow: 8,
@@ -333,61 +333,61 @@ export const simulatorDefaults = {
 
 /** Contribución CLP/año por punto porcentual de cada palanca. */
 export const simulatorWeights = {
-  noShow: 95000,
-  controles: 180000,
-  leads: 220000,
-  membresia: 310000,
+  noShow: 110000,
+  controles: 220000,
+  leads: 280000,
+  membresia: 380000,
 };
 
 export const growthSeries: GrowthPoint[] = Array.from({ length: 13 }, (_, i) => {
   const dia = i * 7;
   return {
     dia,
-    alcance: Math.round(i * i * 12 + i * 8),
-    seguidores: Math.round(i * i * 1.8 + i * 2),
-    metaAlcance: Math.round(dia * 18 + 40),
+    alcance: Math.round(i * i * 14 + i * 10),
+    seguidores: Math.round(i * i * 2.1 + i * 2.5),
+    metaAlcance: Math.round(dia * 22 + 50),
   };
 });
 
 export const heatDays = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
 export const heatHours = ["09", "11", "13", "15", "17", "19"];
 
-/** Referencia sector salud-estética Chile (demo). */
+/** Referencia engagement estética facial Chile oriente (demo). */
 export const heatCells: HeatCell[] = [
   { dia: "Lun", hora: "09", valor: 2 },
   { dia: "Lun", hora: "11", valor: 4 },
   { dia: "Lun", hora: "13", valor: 3 },
   { dia: "Lun", hora: "15", valor: 5 },
-  { dia: "Lun", hora: "17", valor: 6 },
-  { dia: "Lun", hora: "19", valor: 4 },
+  { dia: "Lun", hora: "17", valor: 7 },
+  { dia: "Lun", hora: "19", valor: 5 },
   { dia: "Mar", hora: "09", valor: 3 },
   { dia: "Mar", hora: "11", valor: 5 },
   { dia: "Mar", hora: "13", valor: 4 },
   { dia: "Mar", hora: "15", valor: 7 },
-  { dia: "Mar", hora: "17", valor: 8 },
-  { dia: "Mar", hora: "19", valor: 5 },
+  { dia: "Mar", hora: "17", valor: 9 },
+  { dia: "Mar", hora: "19", valor: 6 },
   { dia: "Mié", hora: "09", valor: 3 },
   { dia: "Mié", hora: "11", valor: 6 },
   { dia: "Mié", hora: "13", valor: 5 },
-  { dia: "Mié", hora: "15", valor: 7 },
+  { dia: "Mié", hora: "15", valor: 8 },
   { dia: "Mié", hora: "17", valor: 9 },
-  { dia: "Mié", hora: "19", valor: 6 },
+  { dia: "Mié", hora: "19", valor: 7 },
   { dia: "Jue", hora: "09", valor: 4 },
   { dia: "Jue", hora: "11", valor: 6 },
   { dia: "Jue", hora: "13", valor: 5 },
   { dia: "Jue", hora: "15", valor: 8 },
   { dia: "Jue", hora: "17", valor: 9 },
-  { dia: "Jue", hora: "19", valor: 7 },
+  { dia: "Jue", hora: "19", valor: 8 },
   { dia: "Vie", hora: "09", valor: 3 },
   { dia: "Vie", hora: "11", valor: 5 },
   { dia: "Vie", hora: "13", valor: 4 },
-  { dia: "Vie", hora: "15", valor: 6 },
-  { dia: "Vie", hora: "17", valor: 7 },
-  { dia: "Vie", hora: "19", valor: 8 },
-  { dia: "Sáb", hora: "09", valor: 5 },
-  { dia: "Sáb", hora: "11", valor: 8 },
-  { dia: "Sáb", hora: "13", valor: 7 },
-  { dia: "Sáb", hora: "15", valor: 4 },
+  { dia: "Vie", hora: "15", valor: 7 },
+  { dia: "Vie", hora: "17", valor: 8 },
+  { dia: "Vie", hora: "19", valor: 9 },
+  { dia: "Sáb", hora: "09", valor: 6 },
+  { dia: "Sáb", hora: "11", valor: 9 },
+  { dia: "Sáb", hora: "13", valor: 8 },
+  { dia: "Sáb", hora: "15", valor: 5 },
   { dia: "Sáb", hora: "17", valor: 2 },
   { dia: "Sáb", hora: "19", valor: 1 },
 ];

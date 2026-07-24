@@ -19,6 +19,7 @@ import AprobacionesPendientes from "@/components/AprobacionesPendientes";
 import ChartsRow from "@/components/ChartsRow";
 import PacientesInactivos from "@/components/PacientesInactivos";
 import ElevenLabsAgentWidget from "@/components/ElevenLabsAgentWidget";
+import ElevenLabsConvaiBubble from "@/components/ElevenLabsConvaiBubble";
 import AccionesTareas from "@/components/AccionesTareas";
 import PacientesPrediccion from "@/components/PacientesPrediccion";
 import KpisSimulador from "@/components/KpisSimulador";
@@ -80,7 +81,7 @@ export default function DashboardShell() {
     const item: ApprovalItem = {
       id: `camp-${paciente.id}`,
       titulo: `Campaña de reactivación — ${paciente.nombre.split(" ")[0]} · ${formatCLP(paciente.valorHistorico)} histórico`,
-      mensajeWhatsApp: `Hola ${paciente.nombre.split(" ")[0]}, hace tiempo que no nos vemos en la consulta de la Dra. Fontecilla. Tenemos cupos esta semana para un control. ¿Te agendo? Responde a este WhatsApp.`,
+      mensajeWhatsApp: `Hola ${paciente.nombre.split(" ")[0]}, hace tiempo que no nos vemos en la consulta de estética facial de la Dra. Fontecilla (Vitacura). Tenemos cupos esta semana para un control y, si corresponde, retoque de toxina. ¿Te agendo? Responde a este WhatsApp.`,
       origen: "campaña",
     };
 
@@ -112,6 +113,7 @@ export default function DashboardShell() {
   return (
     <div className="flex min-h-screen bg-paper">
       <Sidebar active={nav} onNavigate={setNav} aprobadasHoy={aprobadasHoy} />
+      <ElevenLabsConvaiBubble snapshot={snapshot} />
 
       <main className="flex min-w-0 flex-1 flex-col">
         <header className="border-b border-line px-8 py-4">
@@ -170,9 +172,9 @@ export default function DashboardShell() {
             AURA propone · usted aprueba
           </p>
           <p className="mx-auto max-w-3xl text-center text-[10.5px] leading-relaxed text-muted/90">
-            Datos de demostración hasta conectar sus fuentes · AURA no reemplaza
-            a Dentalink — vive encima, y lo vuelve inteligente. Los datos son de
-            la consulta, y de la consulta se quedan.
+            Demo de consulta de estética facial (Vitacura) · AURA no reemplaza su
+            agenda ni ficha clínica — vive encima, y la vuelve inteligente. Los
+            datos son de la consulta, y de la consulta se quedan.
           </p>
         </footer>
       </main>
